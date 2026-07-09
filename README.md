@@ -18,10 +18,15 @@ https://github.com/haoduoyu369/skills
 
 ## 包含内容
 
+仓库根即为 skill 入口：
+
 ```
-.codex/skills/prd-writer/
+/
 ├── SKILL.md                # 主入口
 ├── CLAUDE.md
+├── MANIFEST.md
+├── README.md
+├── .gitignore
 ├── references/
 │   ├── examples.md
 │   ├── feedback_log.md
@@ -62,10 +67,12 @@ https://github.com/haoduoyu369/skills
 
 ## 安装方式
 
-把 `.codex/skills/prd-writer` 复制到目标项目的 `.codex/skills/` 下：
+把仓库根的所有内容复制到目标项目的 `.codex/skills/prd-writer/` 下：
 
 ```bash
-cp -R .codex/skills/prd-writer /path/to/target-project/.codex/skills/
+# 在仓库根目录执行
+mkdir -p /path/to/target-project/.codex/skills/prd-writer
+cp -R SKILL.md CLAUDE.md MANIFEST.md README.md references scripts /path/to/target-project/.codex/skills/prd-writer/
 ```
 
 如果目标项目已有同名 skill，请先备份或确认覆盖策略。
