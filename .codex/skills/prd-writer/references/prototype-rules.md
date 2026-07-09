@@ -11,7 +11,7 @@
 | 大纲确认 | `.tmp/requirements_outline.md` 已根据用户确认更新 |
 | 方案确认 | `.tmp/solution_brief.md` 已记录推荐方案、业务模型、流程图/建模决策和用户确认 |
 | PRD 确认 | `.tmp/prd_confirmed.md` 已记录 PRD 确认结果 |
-| ProtoHub 基线 | 优先读取远程 `docs/team-guide.md` 或当前项目 `protohub-workflow/references/team-guide.md`，以团队原型流程为主 |
+| ProtoHub 基线 | 优先读取远程 `docs/team-guide.md`，以团队原型流程主基线为准 |
 
 说明：原型用于验证已确认的页面布局和交互，不用于替代需求大纲确认、产品方案讨论、流程图制定或 PRD 确认。
 

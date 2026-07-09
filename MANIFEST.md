@@ -12,24 +12,6 @@
   - `scripts/validate_prototype.py`
   - `scripts/mermaid.min.js`
   - `scripts/restart-od.sh`
-- `.codex/skills/structured-prd-writer`
-  - `SKILL.md`
-  - `references/style-guide.md`
-- `.codex/skills/protohub-workflow`
-  - `SKILL.md`
-  - `references/team-guide.md`
-  - `references/quickstart.md`
-  - `references/style-guide.md`
-  - `references/data-flow-map.md`
-- `.codex/skills/historical-context-query`
-  - `SKILL.md`
-- `.codex/skills/rds-api-query`
-  - `SKILL.md`
-  - `api-payload-reference.md`
-  - `order-connection-reference.md`
-  - `store-connection-reference.md`
-  - `violation-connection-reference.md`
-  - `.gitignore`
 
 ## Excluded
 
@@ -40,6 +22,5 @@
 
 ## Notes
 
-- RDS query skill is included as an optional downstream tool without credential files.
-- ProtoHub workflow is included because PRD confirmation can hand off into prototype design.
-- Historical context query is included because the product design flow may call it before PRD writing.
+- 本仓库为单 skill 仓库，根目录即为 `prd-writer` 的入口。
+- 通过 URL 导入工具时直接使用 `https://github.com/haoduoyu369/skills`，工具会在仓库根目录读取 `SKILL.md`。

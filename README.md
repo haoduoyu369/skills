@@ -1,18 +1,47 @@
-# 产品方案设计工具包
+# 产品方案设计工具包 / prd-writer
 
 版本：2026-07-09
 
-这个包用于分发最新的产品方案设计流程给同事。核心能力是生成固定 6 模块研发版 PRD，并在 PRD 确认后衔接 ProtoHub 原型流程。
+主 skill：`prd-writer`（固定 6 模块研发版 PRD 生成工具）。
+
+仓库为单 skill 仓库，根目录即为 `prd-writer` 的入口。
+
+## 通过 URL 导入
+
+第三方 skill 导入工具可直接使用：
+
+```
+https://github.com/haoduoyu369/skills
+```
+
+工具会在仓库根目录读取 `SKILL.md`。
 
 ## 包含内容
 
-| 目录 | 用途 |
-|---|---|
-| `.codex/skills/prd-writer` | 主产品方案设计 / PRD 生成工具，已更新为固定 6 模块研发版 PRD |
-| `.codex/skills/structured-prd-writer` | 结构化需求拆解工具，Phase 6 已同步为固定 6 模块研发版 PRD |
-| `.codex/skills/protohub-workflow` | PRD 确认后的 ProtoHub 原型下游流程 |
-| `.codex/skills/historical-context-query` | 需求分析前的历史上下文 / 代码逻辑查询流程 |
-| `.codex/skills/rds-api-query` | 可选 RDS 只读查询工具说明，不包含个人鉴权 token |
+```
+.codex/skills/prd-writer/
+├── SKILL.md                # 主入口
+├── CLAUDE.md
+├── references/
+│   ├── examples.md
+│   ├── feedback_log.md
+│   ├── pending_mapping.md
+│   ├── prd-template.md
+│   ├── prototype-rules.md
+│   ├── self-audit-checklist.md
+│   ├── system-sensing.md
+│   ├── term-mapping.md
+│   ├── walle-parser.md
+│   ├── 原型生成方案.md
+│   └── 踩坑记录.md
+└── scripts/
+    ├── hub_client.py
+    ├── render_mermaid.py
+    ├── screenshot.py
+    ├── validate_prototype.py
+    ├── mermaid.min.js
+    └── restart-od.sh
+```
 
 ## PRD 固定模块
 
@@ -33,29 +62,19 @@
 
 ## 安装方式
 
-把本包里的 `.codex/skills/*` 复制到目标项目的 `.codex/skills/` 下。
-
-示例：
+把 `.codex/skills/prd-writer` 复制到目标项目的 `.codex/skills/` 下：
 
 ```bash
-cp -R .codex/skills/* /path/to/target-project/.codex/skills/
+cp -R .codex/skills/prd-writer /path/to/target-project/.codex/skills/
 ```
 
 如果目标项目已有同名 skill，请先备份或确认覆盖策略。
-
-## 使用建议
-
-1. 写 PRD 时优先使用 `prd-writer`。
-2. 输入文本本身层级复杂、规则分支多时，使用 `structured-prd-writer`。
-3. 做需求分析前，如需要查历史代码或历史需求，先使用 `historical-context-query`。
-4. PRD 确认后再进入 `protohub-workflow` 原型流程。
 
 ## 鉴权和本机配置
 
 本包不包含任何个人鉴权文件。
 
-- `rds-api-query/x-auth-token.txt` 未打包，同事如需用 RDS 查询，需要自行配置。
-- GitNexus Hub、Toca Wiki、Chrome 登录态等能力依赖同事本机环境和权限。
+- GitNexus Hub、Toca Wiki、Chrome 登录态等能力依赖使用方本机环境和权限。
 - `prd-writer/scripts/mermaid.min.js` 已打包，用于本地渲染流程图。
 
 ## 分发前检查
